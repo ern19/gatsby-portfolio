@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Header from '../components/Header'
-import './index.css'
+import NavBar from './NavBar'
+import './background.css'
 
 const TemplateWrapper = ({ children }) => (
+  <MuiThemeProvider>
   <div>
     <Helmet
       title="Gatsby Default Starter"
@@ -15,6 +17,7 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
     <Header />
+    <NavBar/>
     <div
       style={{
         margin: '0 auto',
@@ -26,6 +29,7 @@ const TemplateWrapper = ({ children }) => (
       {children()}
     </div>
   </div>
+  </MuiThemeProvider>
 )
 
 TemplateWrapper.propTypes = {
